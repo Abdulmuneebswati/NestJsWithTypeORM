@@ -4,7 +4,7 @@ import { ConfigService } from '@nestjs/config';
 @Injectable()
 export class AppService {
   getHello(): string {
-    return `Hello Worl ${process.env.PORT}`;
+    return 'Hello World!';
   }
 }
 

@@ -5,5 +5,5 @@ export type createUserParams = {
 
 export type updateUserParams = {
   username: string;
-  authStrategy: string;
+  authStrategy?: string;
 };

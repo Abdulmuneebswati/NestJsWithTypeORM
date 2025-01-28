@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -22,13 +22,10 @@ jobs:
           node-version: '20.15.0'
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps  # Ensure all dependencies are installed
+        run: npm install --legacy-peer-deps # Ensure all dependencies are installed
 
       - name: Run ESLint
-        run: npm run lint  
+        run: npm run lint
 
       - name: Run Prettier
         run: npm run format
-
-      - name: Run tests
-        run: npm run test

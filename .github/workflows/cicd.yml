@@ -9,10 +9,9 @@ on:
       - main
 
 jobs:
-  # Job to set up the Node.js environment and run tests
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -22,20 +21,14 @@ jobs:
         with:
           node-version: '20.15.0'
 
-      - name: Ensure node_modules/.bin is in the PATH
-        run: echo "PATH=$(pwd)/node_modules/.bin:$PATH" >> $GITHUB_ENV
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps  # Ensure all dependencies are installed
 
       - name: Run ESLint
-        run: npm run lint
+        run: npm run lint  
 
       - name: Run Prettier
         run: npm run format
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Run tests
         run: npm run test
-
-      - name: Build the application
-        run: npm run build

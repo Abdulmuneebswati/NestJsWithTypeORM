@@ -14,7 +14,7 @@ import { UsersService } from '../../services/users/users.service';
 import { CreateUserPostDto } from 'src/users/dtos/createUserPost.dto';
 import { CreateUserProfileDto } from 'src/users/dtos/createUserProfile.dto';
 
-@Controller('user')
+@Controller('users')
 export class UserController {
   constructor(private usersService: UsersService) {}
   @Get()
